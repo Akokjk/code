@@ -4,7 +4,7 @@ int main()
   //I could not figure out how to make the window inside of the game itself which is a shame! :XX:X:
   sf::RenderWindow window(
     sf::VideoMode(X_RES, Y_RES),
-    "SFML OOP Base",
+    "Logically",
     sf::Style::Close
   );
 

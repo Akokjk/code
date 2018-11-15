@@ -1,21 +1,23 @@
 #include "game.hpp"
-sf::Sprite Game::create_gate(int kind, sf::Vector2f position){
+void Game::create_gate(int kind, sf::Vector2f position){
   sf::Sprite drawn;
-  sf::Texture text;
+  textures.push_back(new sf::Texture());
   switch(kind){
     case 0:
-      text.loadFromFile("Resources/andgate.png");
+      textures.back()->loadFromFile("Resources/andgate.png");
       break;
     case 1:
-      text.loadFromFile("Resources/notgate.png");
+      textures.back()->loadFromFile("Resources/notgate.png");
       break;
     case 2:
-    text.loadFromFile("Resources/orgate.png");
+      textures.back()->loadFromFile("Resources/orgate.png");
       break;
     default:
       break;
   }
-  drawn.setTexture(text);
+  textures.back()->setSmooth(true);
+  drawn.setTexture(*textures.back());
   drawn.setPosition(position);
-  return drawn;
+  drawn.setScale(.1, .1);
+  objects.push_back(new sf::Sprite(drawn));
 }

@@ -10,8 +10,9 @@ private:
   void draw();
   void update();
   std::vector<sf::Drawable*> objects; //holds all drawable objects
-  std::vector<sf::Texture*> textures; //holds all drawable objects
-  sf::Sprite create_gate(int kind, sf::Vector2f);
+  std::vector<sf::Texture*> textures; //holds all drawable textures
+  void create_gate(int kind, sf::Vector2f);
+  void create_menu(); 
 public:
   Game(sf::RenderWindow *game);
   void run();
